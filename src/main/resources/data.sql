@@ -1,5 +1,11 @@
--- INITIALISATION TABLE TASK
-INSERT INTO TASK(TASK_ID, TITLE, STATE, DETAIL) values (1, 'Visionner la liste', 'Afficher la liste par ordre décroissant', 1);
-INSERT INTO TASK(TASK_ID, TITLE, STATE, DETAIL) values (, 'Modifier une tache', 'indiquer si la tache a été accomplie ou non', 1);
+drop table if EXISTS TODO;
 
-COMMIT;
+CREATE TABLE TODO(
+TODO_ID INT AUTO_INCREMENT PRIMARY KEY,
+TITLE VARCHAR(250) NOT NULL,
+DETAIL VARCHAR(250),
+STATE BOOLEAN NOT NULL
+);
+
+INSERT INTO TODO(TODO_ID, TITLE, DETAIL, STATE) values (1, 'Visionner la liste', 'Afficher la liste par ordre decroissant', 1);
+INSERT INTO TODO(TODO_ID, TITLE, DETAIL, STATE) values (2, 'Modifier une tache', 'indiquer si la tache a été accomplie ou non', 1);
