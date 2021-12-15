@@ -1,5 +1,7 @@
 package com.laurent.todoapp.main.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -10,18 +12,14 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
-@Table(name = "TASK")
+@Table(name = "TODO")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, 
-allowGetters = true)
-public class task {
+public class Todo implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "TASK_ID", updatable = false, nullable = false)
+	@Column(name = "TODO_ID", updatable = false, nullable = false)
 	private Long id;
 	
 	@Column(name = "TITLE", insertable=true, updatable=true, nullable=false)
@@ -33,11 +31,11 @@ public class task {
 	@Column(name = "DETAIL", insertable=true, updatable=true, nullable=true)
     private String detail;
 
-	public task() {
+	public Todo() {
 		super();
 	}
 
-	public task(Long id, String title, boolean state, String detail) {
+	public Todo(Long id, String title, boolean state, String detail) {
 		super();
 		this.id = id;
 		this.title = title;
