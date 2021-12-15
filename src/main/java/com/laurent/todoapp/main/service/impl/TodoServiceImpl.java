@@ -18,6 +18,12 @@ public class TodoServiceImpl implements TodoService {
 	public TodoServiceImpl() {
 		super();
 	}
+	
+	@Autowired
+	public TodoServiceImpl(TodoRepository todoRepository) {
+		super();
+		this.todoRepository = todoRepository;
+	}
 
 	@Override
 	public List<Todo> getAllTodos() {
