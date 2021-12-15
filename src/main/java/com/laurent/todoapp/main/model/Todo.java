@@ -43,6 +43,13 @@ public class Todo implements Serializable{
 		this.detail = detail;
 	}
 
+	public Todo(String title, boolean state, String detail) {
+		super();
+		this.title = title;
+		this.state = state;
+		this.detail = detail;
+	}
+
 	public Long getId() {
 		return id;
 	}
