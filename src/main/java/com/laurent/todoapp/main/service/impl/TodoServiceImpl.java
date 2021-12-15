@@ -45,7 +45,7 @@ public class TodoServiceImpl implements TodoService {
 		return todoFound;
 	}
 	
-	@Transactional
+	@Transactional(readOnly=false)
 	@Override
 	public Todo updateTodo(Long id, TodoDto todoDto)throws ApiNotFoundException {
 		Todo todo = this.getTodo(id).orElseThrow(() -> new ApiNotFoundException("Todo", "id", id));
@@ -61,6 +61,15 @@ public class TodoServiceImpl implements TodoService {
 		return todo;
 	}
 
-	
+	@Transactional(readOnly=false)
+	@Override
+	public Todo addTodo(Todo todo)throws ApiNotFoundException {
+		try{
+			todoRepository.save(todo);
+ 		} catch (ApiNotFoundException e) {
+			throw new ApiNotFoundException("Enregistrement impossible", "Erreur : ", e);
+ 		}
+		return todo;
+	}
 
 }
