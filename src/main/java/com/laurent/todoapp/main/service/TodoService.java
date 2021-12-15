@@ -15,4 +15,6 @@ public interface TodoService {
 
 	Todo updateTodo(Long id, TodoDto todoDto) throws ApiNotFoundException;
 
+	Todo addTodo(Todo todo) throws ApiNotFoundException;
+
 }

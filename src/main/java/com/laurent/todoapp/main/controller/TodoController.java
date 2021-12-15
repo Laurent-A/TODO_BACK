@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +43,11 @@ public class TodoController {
 		Todo todoUpdated = todoService.updateTodo(id, todoDto);
 		return new ResponseEntity<Todo>(todoUpdated, HttpStatus.OK);
 	}
-	
+
+	@PostMapping(value = "/todo")
+	public ResponseEntity<Todo> addTodo(@RequestBody Todo todo) {
+		Todo todoAdded = todoService.addTodo(todo);		
+ 		return new ResponseEntity<Todo>(todoAdded, HttpStatus.CREATED);
+ 	}
 
 }
