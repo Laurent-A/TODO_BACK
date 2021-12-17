@@ -9,3 +9,4 @@ STATE BOOLEAN NOT NULL
 
 INSERT INTO TODO(TODO_ID, TITLE, DETAIL, STATE) values (1, 'Visionner la liste', 'Afficher la liste par ordre decroissant', 1);
 INSERT INTO TODO(TODO_ID, TITLE, DETAIL, STATE) values (2, 'Modifier une tache', 'indiquer si la tache a été accomplie ou non', 1);
+INSERT INTO TODO(TODO_ID, TITLE, DETAIL, STATE) values (3, 'Tache déjà faite', 'cette tache est déjà effectuée', 0);
