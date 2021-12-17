@@ -1,13 +1,7 @@
 # Contexte
 TODO Back est une API REST basée sur SPRINGBOOT permettant la gestion d'une todoList
 
-## 1 : Environnement
-
-### 1.1 : Description 
-
-As a user I would like to list my current todos
-
-### 1.2 : Fiche technique :
+## 1 : Fiche technique
 
 - Spring Boot-2.6.1-RELEASE.
 - Java-1.8.
